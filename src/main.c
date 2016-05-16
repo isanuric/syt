@@ -10,7 +10,11 @@
 
 
 int main() {
-
+	//do_mode();
+//	int rek;
+//	rek = do_rekursive(5);
+//	printf("rek= %d\n\n", rek);
+	run();
 
 	return 0;
 }
