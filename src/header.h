@@ -14,5 +14,6 @@
 void do_mode();
 int  do_rekursive(int x);
 void run();
-int  do_determinate(int n, int matrix[SIZE][SIZE]);
+//int  do_determinate(int n, int matrix[SIZE][SIZE]);
+int do_determinate(int n, int **matrix);
 double **read_file(char *file_name);
