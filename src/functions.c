@@ -20,24 +20,18 @@ void run()
 
 	//arr = read_file("data.txt");
 
-
-
 	arr = (int **)calloc(SIZE, sizeof(int *));
 	for(i = 0; i < SIZE; i++)
 	   arr[i] = (int * )calloc(SIZE, sizeof(int));
 
-//	int arr0[SIZE][SIZE] = { {0, 2, 5, 1},
-//							 {4, 5, 6, 3},
-//							 {1, 1, 1, 2},
-//							 {1, 1, 1, 7} };
+	int arr0[SIZE][SIZE] = { {0, 2, 5, 1},
+							 {4, 5, 6, 3},
+							 {1, 1, 1, 2},
+							 {1, 1, 1, 7} };
 
-	for (i = 0; i < SIZE; ++i) {
-		for (j = 0; j < SIZE; ++j) {
-			arr[i][j] = 100;
-			printf("%d ", arr[i][j]);
-		}
-		printf("\n");
-	}
+	for (i = 0; i < SIZE; ++i)
+		for (j = 0; j < SIZE; ++j)
+			 arr[i][j] = arr0[i][j];
 
 	det = do_determinate(SIZE, arr);
 	printf("det: %d", det);
@@ -80,22 +74,31 @@ int do_determinate(int n, int **matrix)
 	int row, coulumn;
 	//temp = calloc(n * n, sizeof(int *));
 
-	printf("*************************************\n");
-	for (i = 0; i < SIZE; ++i) {
-		for (j = 0; j < SIZE; ++j) {
-			printf("%d ", matrix[i][j]);
-		}
-		printf("\n");
-	}
-
 	temp = (int **)calloc(n, sizeof(int *));
 	for(i = 0; i < n; i++)
 	   temp[i] = (int * )calloc(n, sizeof(int));
 
+//	printf("*************************************\n");
+//	for (i = 0; i < SIZE; ++i) {
+//		for (j = 0; j < SIZE; ++j) {
+//			printf("%d ", matrix[i][j]);
+//		}
+//		printf("\n");
+//	}
+
+
+//	printf("***************\n");
+//	for (i = 0; i < n; ++i) {
+//		for (j = 0; j < n; ++j) {
+//			temp[i][j] = j;
+//			printf("%d ", temp[i][j]);
+//		}
+//		printf("\n");
+//	}
+
 	printf("***************\n");
 	for (i = 0; i < n; ++i) {
 		for (j = 0; j < n; ++j) {
-			temp[i][j] = j;
 			printf("%d ", temp[i][j]);
 		}
 		printf("\n");
