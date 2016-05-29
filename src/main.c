@@ -14,7 +14,8 @@ int main() {
 //	int rek;
 //	rek = do_rekursive(5);
 //	printf("rek= %d\n\n", rek);
-	run();
+//	run();	// matrix
+	run_linked_list();
 
 	return 0;
 }
