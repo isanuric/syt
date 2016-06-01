@@ -13,7 +13,7 @@
 void run_linked_list()
 {
 	int count = get_random();
-	int make_list = 1;
+//	int make_list = 1;
 	struct NODE *list;
 	list = (struct NODE*)malloc(sizeof(struct NODE));
 //	list->number = 10;
@@ -23,8 +23,14 @@ void run_linked_list()
 		append(list, count);
 		count--;
 	}
+
+	/* delete element */
+	remove_(list, 5);
 	display_list(list);
 	free(list);
+
+
+
 }
 
 
@@ -39,14 +45,44 @@ void append(struct NODE *list, int num)
 
 void display_list(struct NODE *list)
 {
+  int newline = 0;
   while (list->next_ != NULL)
   {
     printf("%d ", list->number);
     list = list->next_;
+    newline++;
+    if(newline%10 == 0)
+    	printf("\n");
   }
   printf("%d", list->number);
 }
 
+/*
+ *
+ */
+void remove_(struct NODE *list, int num)
+{
+	struct NODE *temp;
+	temp = (struct NODE*)malloc(sizeof(struct NODE));
+
+	if(list->number==num)
+	{
+		/* remove the node */
+		temp = list->next_;
+		free(list);
+		list = temp;
+	}else{
+		while(list->next_->number!=num)
+			list=list->next_;
+
+		temp = list->next_->next_;
+		free(list->next_);
+		list->next_=temp;
+	}
+}
+/*
+ *
+ */
 int get_random()
 {
 	int rand_;

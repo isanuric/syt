@@ -32,5 +32,6 @@ double **read_file(char *file_name);
 void run_linked_list();
 void append(struct NODE *list, int num);
 void display_list(struct NODE *list);
+void remove_(struct NODE *list, int num);
 int get_random();
 
